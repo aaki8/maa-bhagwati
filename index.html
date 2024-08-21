@@ -89,7 +89,7 @@
         }
 
         .top-box .search-box input {
-            width: 80%;
+            width: 90%; /* Increased width */
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ddd;
@@ -98,13 +98,30 @@
 
         /* Sliding section */
         .sliding-section {
+            position: relative;
+            overflow: hidden;
+            height: 200px; /* Adjust height as needed */
             margin: 20px;
+            border-radius: 8px;
         }
 
         .sliding-section img {
+            position: absolute;
             width: 100%;
+            height: auto;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            animation: slide 12s infinite;
+        }
+
+        @keyframes slide {
+            0% { left: 0; }
+            20% { left: 0; }
+            25% { left: -100%; }
+            45% { left: -100%; }
+            50% { left: -200%; }
+            70% { left: -200%; }
+            75% { left: -300%; }
+            100% { left: -300%; }
         }
 
         /* Shopping items section */
@@ -164,15 +181,6 @@
 
         .product-card button:hover {
             background-color: #45a049;
-        }
-
-        /* Footer styling */
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
         }
 
     </style>
@@ -240,10 +248,6 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 Maa Bhagwati Groceries. All rights reserved.</p>
-    </footer>
 
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
