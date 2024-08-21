@@ -6,7 +6,7 @@
     <title>Maa Bhagwati Groceries</title>
     <style>
         /* Reset some basic elements */
-        body, h1, h2, h3, h4, p, ul, li, a, button, input {
+        body, h1, h2, h3, h4, p, ul, li, a {
             margin: 0;
             padding: 0;
             list-style: none;
@@ -18,119 +18,100 @@
             background-color: #f5f5f5;
         }
 
-        /* Header section */
-        .header {
+        /* Header section styling */
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #8BC34A;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #4CAF50;
+            padding: 15px;
         }
 
-        .header .logo {
-            width: 10%;
-        }
-
-        .header .logo img {
-            max-width: 100%;
-        }
-
-        .header h1 {
+        .logo-box {
+            flex: 1;
             font-size: 24px;
             color: white;
+            font-weight: bold;
+        }
+
+        .company-name {
+            flex: 2;
             text-align: center;
-            flex-grow: 1;
-        }
-
-        .header .user-options {
-            width: 10%;
-            text-align: right;
-        }
-
-        .header .user-options button {
-            background-color: #4CAF50;
+            font-size: 28px;
             color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
         }
 
-        .header .user-options button:hover {
-            background-color: #45a049;
+        .user-button {
+            flex: 1;
+            text-align: right;
+            color: white;
         }
 
-        /* Second section */
-        .top-box {
+        /* Second section styling */
+        .action-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: white;
-            padding: 15px;
-            margin: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .top-box button {
             background-color: #4CAF50;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .track-order {
+            flex: 1;
             color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            text-align: left;
         }
 
-        .top-box button:hover {
-            background-color: #45a049;
+        .search-box {
+            flex: 2;
+            text-align: center;
         }
 
-        .top-box .search-box input {
+        .search-box input {
             width: 90%; /* Increased width */
             padding: 10px;
-            font-size: 16px;
+            border-radius: 5px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            font-size: 16px;
         }
 
-        /* Sliding section */
+        .cart-button {
+            flex: 1;
+            text-align: right;
+            color: white;
+        }
+
+        /* Sliding section styling */
         .sliding-section {
-            position: relative;
+            background-color: #e0e0e0;
+            height: 300px;
+            margin: 20px 0;
+            border-radius: 10px;
             overflow: hidden;
-            height: 200px; /* Adjust height as needed */
-            margin: 20px;
-            border-radius: 8px;
+            position: relative;
+        }
+
+        .sliding-section .slider-wrapper {
+            display: flex;
+            width: 400%; /* Number of slides */
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 1s ease-in-out;
         }
 
         .sliding-section img {
-            position: absolute;
             width: 100%;
-            height: auto;
-            border-radius: 8px;
-            animation: slide 12s infinite;
+            height: 100%;
+            object-fit: cover;
         }
 
-        @keyframes slide {
-            0% { left: 0; }
-            20% { left: 0; }
-            25% { left: -100%; }
-            45% { left: -100%; }
-            50% { left: -200%; }
-            70% { left: -200%; }
-            75% { left: -300%; }
-            100% { left: -300%; }
-        }
-
-        /* Shopping items section */
-        main {
-            padding: 20px;
-        }
-
+        /* Shopping items section styling */
         .products {
-            width: 100%;
+            margin-top: 20px;
         }
 
         .product-grid {
@@ -139,125 +120,136 @@
             gap: 20px;
         }
 
-        .product-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 15px;
+        /* Card design from Uiverse.io by Tiagoadag */
+        .card {
+            width: 190px;
+            height: 254px;
+            background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+            border-radius: 20px;
+            transition: all .3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            color: white;
+            padding: 20px;
         }
 
-        .product-card:hover {
-            transform: scale(1.05);
+        .card:hover {
+            box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
         }
 
-        .product-card img {
+        .card img {
             width: 100%;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        .product-card h4 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .product-card p {
-            font-size: 16px;
-            color: #4CAF50;
+            height: auto;
+            border-radius: 10px;
             margin-bottom: 15px;
         }
 
-        .product-card button {
+        .card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .card button {
             background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
         }
 
-        .product-card button:hover {
+        .card button:hover {
             background-color: #45a049;
         }
-
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
+    <header>
+        <div class="logo-box">
+            <a href="#">LOGO</a>
         </div>
-        <h1>MAA BHAGWATI GROCERIES</h1>
-        <div class="user-options">
-            <button id="userName">Hi User</button>
+        <div class="company-name">
+            MAA BHAGWATI GROCERIES
+        </div>
+        <div class="user-button">
+            Hi, User Name
         </div>
     </header>
 
-    <div class="top-box">
-        <button>Track Order</button>
-        <div class="search-box">
-            <input type="text" placeholder="Search">
+    <section class="action-bar">
+        <div class="track-order">
+            <a href="#">Track Order</a>
         </div>
-        <button><i class="fas fa-shopping-cart"></i></button>
-    </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search for products...">
+        </div>
+        <div class="cart-button">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </section>
 
-    <div class="sliding-section">
-        <img src="slider1.jpg" alt="Advertisement">
-        <img src="slider2.jpg" alt="Advertisement">
-        <img src="slider3.jpg" alt="Advertisement">
-        <img src="slider4.jpg" alt="Advertisement">
-        <!-- Add more images here if needed -->
-    </div>
+    <section class="sliding-section">
+        <div class="slider-wrapper">
+            <img src="slider1.jpg" alt="Advertisement">
+            <img src="slider2.jpg" alt="Advertisement">
+            <img src="slider3.jpg" alt="Advertisement">
+            <img src="slider4.jpg" alt="Advertisement">
+        </div>
+    </section>
 
-    <main>
-        <section class="products">
-            <h3>All Items (300 items)</h3>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="fogg.jpg" alt="FOGG Marco Body Spray">
-                    <h4>FOGG Marco Body Spray - For Men (150 ml)</h4>
-                    <p>₹250</p>
-                    <button>Add</button>
-                </div>
-                <div class="product-card">
-                    <img src="vatika.jpg" alt="Dabur Vatika Health Shampoo">
-                    <h4>Dabur Vatika Health Shampoo - 640 ml</h4>
-                    <p>₹380</p>
-                    <button>Add</button>
-                </div>
-                <div class="product-card">
-                    <img src="nivea.jpg" alt="NIVEA Musk Talc">
-                    <h4>NIVEA Musk Talc - 400 gm</h4>
-                    <p>₹249</p>
-                    <button>Add</button>
-                </div>
-                <div class="product-card">
-                    <img src="tresemme.jpg" alt="TRESemme Keratin Smooth Conditioner">
-                    <h4>TRESemme Keratin Smooth Conditioner - 190 ml</h4>
-                    <p>₹229</p>
-                    <select>
-                        <option value="190">190 ml</option>
-                        <!-- Add more options if needed -->
-                    </select>
-                    <button>Add</button>
-                </div>
-                <!-- Add more products as needed -->
+    <section class="products">
+        <h3>All Items (300 items)</h3>
+        <div class="product-grid">
+            <div class="card">
+                <img src="fogg.jpg" alt="FOGG Marco Body Spray">
+                <h4>FOGG Marco Body Spray - For Men (150 ml)</h4>
+                <p>₹250</p>
+                <button>Add</button>
             </div>
-        </section>
-    </main>
+            <div class="card">
+                <img src="vatika.jpg" alt="Dabur Vatika Health Shampoo">
+                <h4>Dabur Vatika Health Shampoo - 640 ml</h4>
+                <p>₹380</p>
+                <button>Add</button>
+            </div>
+            <div class="card">
+                <img src="nivea.jpg" alt="NIVEA Musk Talc">
+                <h4>NIVEA Musk Talc - 400 gm</h4>
+                <p>₹249</p>
+                <button>Add</button>
+            </div>
+            <div class="card">
+                <img src="tresemme.jpg" alt="TRESemme Keratin Smooth Conditioner">
+                <h4>TRESemme Keratin Smooth Conditioner - 190 ml</h4>
+                <p>₹229</p>
+                <button>Add</button>
+            </div>
+            <!-- Add more products as needed -->
+        </div>
+    </section>
 
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script>
-        // Dynamically set the user's name
-        document.addEventListener("DOMContentLoaded", function() {
-            const userName = document.getElementById("userName");
-            const user = "Aakash V"; // Replace with actual user name from your backend
-            userName.textContent = `Hi ${user}`;
-        });
+        // Sliding effect for the slider
+        const sliderWrapper = document.querySelector('.slider-wrapper');
+        let index = 0;
+
+        function slide() {
+            index = (index + 1) % 4; // Number of slides
+            sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        setInterval(slide, 3000); // Change slide every 3 seconds
     </script>
 </body>
 </html>
