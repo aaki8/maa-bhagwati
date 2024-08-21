@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Shopping Site</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        #search-bar {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        #search-input {
+            padding: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #cart {
+            margin-left: 20px;
+        }
+
+        #products {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            margin-top: 100px; /* Added margin-top to adjust for fixed header */
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 20px;
+            width: calc(25% - 40px);
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: white;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            color: #ff6347;
+        }
+
+        .product p {
+            margin: 0 0 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 400px;
+        }
+
+        .close-button {
+            float: right;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        #home, #about, #services, #contact {
+            padding: 50px 20px;
+            background-color: #fff;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.6s ease-in-out;
+        }
+
+        h2.section-title {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p.section-content {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shopping Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search for products...">
+        </div>
+        <div id="cart">
+            <span>Cart: <span id="cart-count">0</span> items</span>
+            <button id="checkout-button">Checkout</button>
+        </div>
+    </header>
+
+    <section id="home">
+        <h2 class="section-title">Welcome to Our Shopping Site</h2>
+        <p class="section-content">Find the best products at the best prices.</p>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-content">We are a leading online store offering a wide range of products to meet your needs.</p>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-content">We offer fast shipping, easy returns, and top-notch customer service.</p>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-content">Have any questions? Feel free to reach out to us!</p>
+    </section>
+
+    <main>
+        <div id="products">
+            <!-- 10 Items to Sell -->
+            <div class="product" data-id="1">
+                <h2>Product 1</h2>
+                <p>Price: $10.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="2">
+                <h2>Product 2</h2>
+                <p>Price: $15.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Repeat for all 10 products -->
+            <div class="product" data-id="3">
+                <h2>Product 3</h2>
+                <p>Price: $20.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="4">
+                <h2>Product 4</h2>
+                <p>Price: $25.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="5">
+                <h2>Product 5</h2>
+                <p>Price: $30.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="6">
+                <h2>Product 6</h2>
+                <p>Price: $35.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="7">
+                <h2>Product 7</h2>
+                <p>Price: $40.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="8">
+                <h2>Product 8</h2>
+                <p>Price: $45.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="9">
+                <h2>Product 9</h2>
+                <p>Price: $50.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-id="10">
+                <h2>Product 10</h2>
+                <p>Price: $55.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
