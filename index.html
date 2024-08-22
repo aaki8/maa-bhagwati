@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maa Bhagwati Groceries</title>
     <style>
+        @import 'https://fonts.googleapis.com/css?family=Satisfy';
+
         /* Reset some basic elements */
         body, h1, h2, h3, h4, p, ul, li, a {
             margin: 0;
@@ -25,26 +27,44 @@
             align-items: center;
             background-color: #4CAF50;
             padding: 15px;
+            height: 150px;
         }
 
         .logo-box {
             flex: 1;
-            font-size: 24px;
-            color: white;
-            font-weight: bold;
         }
 
-        .company-name {
+        .logo-box img {
+            height: 100px;
+        }
+
+        .centralize {
             flex: 2;
-            text-align: center;
-            font-size: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            white-space: nowrap;
+            font-size: 40px;
+            font-family: 'Satisfy', cursive;
             color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+        }
+
+        .user-button, .track-order a, .cart-button a {
+            color: yellow;
+            font-size: 18px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
         }
 
         .user-button {
             flex: 1;
             text-align: right;
-            color: white;
         }
 
         /* Second section styling */
@@ -58,10 +78,8 @@
             border-radius: 10px;
         }
 
-        .track-order {
-            flex: 1;
-            color: white;
-            text-align: left;
+        .track-order a, .cart-button a {
+            color: yellow;
         }
 
         .search-box {
@@ -70,7 +88,7 @@
         }
 
         .search-box input {
-            width: 90%; /* Increased width */
+            width: 90%;
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ddd;
@@ -80,7 +98,6 @@
         .cart-button {
             flex: 1;
             text-align: right;
-            color: white;
         }
 
         /* Sliding section styling */
@@ -93,7 +110,7 @@
             position: relative;
         }
 
-        .sliding-section .slider-wrapper {
+        .slider-wrapper {
             display: flex;
             width: 400%; /* Number of slides */
             height: 100%;
@@ -103,7 +120,7 @@
             transition: transform 1s ease-in-out;
         }
 
-        .sliding-section img {
+        .slider-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -170,18 +187,56 @@
         .card button:hover {
             background-color: #45a049;
         }
+        
+        
+        @import 'https://fonts.googleapis.com/css?family=Satisfy';
+ body {
+	 background: #f3f3f3;
+}
+ .centralize {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 height: 100vh;
+}
+ h1, h2 {
+	 font-family: 'Satisfy', cursive;
+}
+ h2 {
+	 transform: rotate(15deg);
+	 font-size: 30px;
+	 color: #ddd;
+	 margin-top: -40px;
+}
+ h1 {
+	 white-space: nowrap;
+     /* Decrease the size here */
+	 font-size: 60px;
+	 color: #fff;
+	 will-change: transform;
+	 transition-timing-function: cubic-bezier(0.88, 2.85, 0.46, -0.12);
+	 transition-duration: 0.2s;
+	 text-shadow: 0px 1px 0 #e6e6e6, 0px 2px 0 #e6e6e6, 0px 3px 0 #e6e6e6, 0px 4px 0 #e6e6e6, 0px 5px 0 #e6e6e6, 0px 6px 0 #e6e6e6, 0px 7px 0 #e6e6e6, 0px 6px 0 #0df, 0px 7px 0 #0df, 0px 8px 0 #0df, 0px 9px 0 #0df, 0px 10px 0 #0df, 0px 11px 0 #0df, 0px 12px 0 #0df, 2px 6px 0 #0df, 2px 7px 0 #0df, 2px 8px 0 #0df, 2px 9px 0 #0df, 2px 10px 0 #0df, 2px 11px 0 #0df, 2px 12px 0 #0df, -2px 6px 0 #0df, -2px 7px 0 #0df, -2px 8px 0 #0df, -2px 9px 0 #0df, -2px 10px 0 #0df, -2px 11px 0 #0df, -2px 12px 0 #0df, 0px 13px 0 #00b1cc, 0px 14px 0 #00b1cc, 0px 15px 0 #00b1cc, 0px 16px 0 #00b1cc, 0px 17px 0 #00b1cc, 0px 18px 0 #00b1cc, 0px 19px 0 #00b1cc, 4px 11px 0 #00b1cc, 4px 12px 0 #00b1cc, 4px 13px 0 #00b1cc, 4px 14px 0 #00b1cc, 4px 15px 0 #00b1cc, 4px 16px 0 #00b1cc, 4px 17px 0 #00b1cc, -4px 11px 0 #00b1cc, -4px 12px 0 #00b1cc, -4px 13px 0 #00b1cc, -4px 14px 0 #00b1cc, -4px 15px 0 #00b1cc, -4px 16px 0 #00b1cc, -4px 17px 0 #00b1cc, 3px 7px 0 #00b1cc, 4px 8px 0 #00b1cc, -4px 9px 0 #00b1cc, 0 21px 15px #000;
+}
+ h1:hover {
+	 cursor: default;
+	 transition-duration: 0.5s;
+	 transform: translateY(-20px);
+	 text-shadow: 0px 1px 0 #e6e6e6, 0px 2px 0 #e6e6e6, 0px 3px 0 #e6e6e6, 0px 4px 0 #e6e6e6, 0px 5px 0 #e6e6e6, 0px 6px 0 #e6e6e6, 0px 7px 0 #e6e6e6, 0px 6px 0 #0df, 0px 7px 0 #0df, 0px 8px 0 #0df, 0px 9px 0 #0df, 0px 10px 0 #0df, 0px 11px 0 #0df, 0px 12px 0 #0df, 2px 6px 0 #0df, 2px 7px 0 #0df, 2px 8px 0 #0df, 2px 9px 0 #0df, 2px 10px 0 #0df, 2px 11px 0 #0df, 2px 12px 0 #0df, -2px 6px 0 #0df, -2px 7px 0 #0df, -2px 8px 0 #0df, -2px 9px 0 #0df, -2px 10px 0 #0df, -2px 11px 0 #0df, -2px 12px 0 #0df, 0px 13px 0 #00b1cc, 0px 14px 0 #00b1cc, 0px 15px 0 #00b1cc, 0px 16px 0 #00b1cc, 0px 17px 0 #00b1cc, 0px 18px 0 #00b1cc, 0px 19px 0 #00b1cc, 4px 11px 0 #00b1cc, 4px 12px 0 #00b1cc, 4px 13px 0 #00b1cc, 4px 14px 0 #00b1cc, 4px 15px 0 #00b1cc, 4px 16px 0 #00b1cc, 4px 17px 0 #00b1cc, -4px 11px 0 #00b1cc, -4px 12px 0 #00b1cc, -4px 13px 0 #00b1cc, -4px 14px 0 #00b1cc, -4px 15px 0 #00b1cc, -4px 16px 0 #00b1cc, -4px 17px 0 #00b1cc, 3px 7px 0 #00b1cc, 4px 8px 0 #00b1cc, -4px 9px 0 #00b1cc, 0 41px 30px #000;
+}
+ 
     </style>
 </head>
 <body>
     <header>
-         <div class="logo-box">
-        <img src="Logo.png" alt="Logo" class="logo-image">
-    </div>
-        <div class="company-name">
-            MAA BHAGWATI GROCERIES
+        <div class="logo-box">
+            <img src="Logo.png" alt="Logo" class="logo-image">
+        </div>
+        <div class="centralize">
+            <h1>Maa Bhagwati Groceries</h1>
         </div>
         <div class="user-button">
-            Hi, User Name
+            User
         </div>
     </header>
 
