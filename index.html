@@ -55,16 +55,108 @@
         }
 
         .user-button, .track-order a, .cart-button a {
+            flex: 1;
             color: yellow;
-            font-size: 18px;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
+            text-align: right;
         }
 
-        .user-button {
-            flex: 1;
-            text-align: right;
+        /* Button styling */
+        .custom-btn {
+            width: 100px;
+            height: 40px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+                        7px 7px 20px 0px rgba(0, 0, 0, .1),
+                        4px 4px 5px 0px rgba(0, 0, 0, .1);
+            outline: none;
+        }
+
+        .btn-8 {
+            background-color: #f0ecfc;
+            background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+            line-height: 42px;
+            padding: 0;
+            border: none;
+        }
+
+        .btn-8 span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-8:before,
+        .btn-8:after {
+            position: absolute;
+            content: "";
+            right: 0;
+            bottom: 0;
+            background: #c797eb;
+            transition: all 0.3s ease;
+        }
+
+        .btn-8:before {
+            height: 0%;
+            width: 2px;
+        }
+
+        .btn-8:after {
+            width: 0%;
+            height: 2px;
+        }
+
+        .btn-8:hover:before {
+            height: 100%;
+        }
+
+        .btn-8:hover:after {
+            width: 100%;
+        }
+
+        .btn-8:hover {
+            background: transparent;
+        }
+
+        .btn-8 span:hover {
+            color: #c797eb;
+        }
+
+        .btn-8 span:before,
+        .btn-8 span:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            background: #c797eb;
+            transition: all 0.3s ease;
+        }
+
+        .btn-8 span:before {
+            width: 2px;
+            height: 0%;
+        }
+
+        .btn-8 span:after {
+            height: 2px;
+            width: 0%;
+        }
+
+        .btn-8 span:hover:before {
+            height: 100%;
+        }
+
+        .btn-8 span:hover:after {
+            width: 100%;
         }
 
         /* Second section styling */
@@ -76,10 +168,6 @@
             padding: 10px;
             margin: 20px 0;
             border-radius: 10px;
-        }
-
-        .track-order a, .cart-button a {
-            color: yellow;
         }
 
         .search-box {
@@ -95,11 +183,6 @@
             font-size: 16px;
         }
 
-        .cart-button {
-            flex: 1;
-            text-align: right;
-        }
-
         /* Sliding section styling */
         .sliding-section {
             background-color: #e0e0e0;
@@ -110,7 +193,7 @@
             position: relative;
         }
 
-        .slider-wrapper {
+        .sliding-section .slider-wrapper {
             display: flex;
             width: 400%; /* Number of slides */
             height: 100%;
@@ -120,7 +203,7 @@
             transition: transform 1s ease-in-out;
         }
 
-        .slider-wrapper img {
+        .sliding-section img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -187,44 +270,6 @@
         .card button:hover {
             background-color: #45a049;
         }
-        
-        
-        @import 'https://fonts.googleapis.com/css?family=Satisfy';
- body {
-	 background: #f3f3f3;
-}
- .centralize {
-	 display: flex;
-	 justify-content: center;
-	 align-items: center;
-	 height: 100vh;
-}
- h1, h2 {
-	 font-family: 'Satisfy', cursive;
-}
- h2 {
-	 transform: rotate(15deg);
-	 font-size: 30px;
-	 color: #ddd;
-	 margin-top: -40px;
-}
- h1 {
-	 white-space: nowrap;
-     /* Decrease the size here */
-	 font-size: 60px;
-	 color: #fff;
-	 will-change: transform;
-	 transition-timing-function: cubic-bezier(0.88, 2.85, 0.46, -0.12);
-	 transition-duration: 0.2s;
-	 text-shadow: 0px 1px 0 #e6e6e6, 0px 2px 0 #e6e6e6, 0px 3px 0 #e6e6e6, 0px 4px 0 #e6e6e6, 0px 5px 0 #e6e6e6, 0px 6px 0 #e6e6e6, 0px 7px 0 #e6e6e6, 0px 6px 0 #0df, 0px 7px 0 #0df, 0px 8px 0 #0df, 0px 9px 0 #0df, 0px 10px 0 #0df, 0px 11px 0 #0df, 0px 12px 0 #0df, 2px 6px 0 #0df, 2px 7px 0 #0df, 2px 8px 0 #0df, 2px 9px 0 #0df, 2px 10px 0 #0df, 2px 11px 0 #0df, 2px 12px 0 #0df, -2px 6px 0 #0df, -2px 7px 0 #0df, -2px 8px 0 #0df, -2px 9px 0 #0df, -2px 10px 0 #0df, -2px 11px 0 #0df, -2px 12px 0 #0df, 0px 13px 0 #00b1cc, 0px 14px 0 #00b1cc, 0px 15px 0 #00b1cc, 0px 16px 0 #00b1cc, 0px 17px 0 #00b1cc, 0px 18px 0 #00b1cc, 0px 19px 0 #00b1cc, 4px 11px 0 #00b1cc, 4px 12px 0 #00b1cc, 4px 13px 0 #00b1cc, 4px 14px 0 #00b1cc, 4px 15px 0 #00b1cc, 4px 16px 0 #00b1cc, 4px 17px 0 #00b1cc, -4px 11px 0 #00b1cc, -4px 12px 0 #00b1cc, -4px 13px 0 #00b1cc, -4px 14px 0 #00b1cc, -4px 15px 0 #00b1cc, -4px 16px 0 #00b1cc, -4px 17px 0 #00b1cc, 3px 7px 0 #00b1cc, 4px 8px 0 #00b1cc, -4px 9px 0 #00b1cc, 0 21px 15px #000;
-}
- h1:hover {
-	 cursor: default;
-	 transition-duration: 0.5s;
-	 transform: translateY(-20px);
-	 text-shadow: 0px 1px 0 #e6e6e6, 0px 2px 0 #e6e6e6, 0px 3px 0 #e6e6e6, 0px 4px 0 #e6e6e6, 0px 5px 0 #e6e6e6, 0px 6px 0 #e6e6e6, 0px 7px 0 #e6e6e6, 0px 6px 0 #0df, 0px 7px 0 #0df, 0px 8px 0 #0df, 0px 9px 0 #0df, 0px 10px 0 #0df, 0px 11px 0 #0df, 0px 12px 0 #0df, 2px 6px 0 #0df, 2px 7px 0 #0df, 2px 8px 0 #0df, 2px 9px 0 #0df, 2px 10px 0 #0df, 2px 11px 0 #0df, 2px 12px 0 #0df, -2px 6px 0 #0df, -2px 7px 0 #0df, -2px 8px 0 #0df, -2px 9px 0 #0df, -2px 10px 0 #0df, -2px 11px 0 #0df, -2px 12px 0 #0df, 0px 13px 0 #00b1cc, 0px 14px 0 #00b1cc, 0px 15px 0 #00b1cc, 0px 16px 0 #00b1cc, 0px 17px 0 #00b1cc, 0px 18px 0 #00b1cc, 0px 19px 0 #00b1cc, 4px 11px 0 #00b1cc, 4px 12px 0 #00b1cc, 4px 13px 0 #00b1cc, 4px 14px 0 #00b1cc, 4px 15px 0 #00b1cc, 4px 16px 0 #00b1cc, 4px 17px 0 #00b1cc, -4px 11px 0 #00b1cc, -4px 12px 0 #00b1cc, -4px 13px 0 #00b1cc, -4px 14px 0 #00b1cc, -4px 15px 0 #00b1cc, -4px 16px 0 #00b1cc, -4px 17px 0 #00b1cc, 3px 7px 0 #00b1cc, 4px 8px 0 #00b1cc, -4px 9px 0 #00b1cc, 0 41px 30px #000;
-}
- 
     </style>
 </head>
 <body>
@@ -236,19 +281,19 @@
             <h1>Maa Bhagwati Groceries</h1>
         </div>
         <div class="user-button">
-            User
+            <button class="custom-btn btn-8"><span>User</span></button>
         </div>
     </header>
 
     <section class="action-bar">
         <div class="track-order">
-            <a href="#">Track Order</a>
+            <button class="custom-btn btn-8"><span>Track Order</span></button>
         </div>
         <div class="search-box">
             <input type="text" placeholder="Search for products...">
         </div>
         <div class="cart-button">
-            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <button class="custom-btn btn-8"><span>Cart</span></button>
         </div>
     </section>
 
