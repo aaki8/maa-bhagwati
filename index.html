@@ -37,14 +37,17 @@
             width: 100%;
         }
 
-        .logo-box {
-            flex: 1;
-        }
+      .logo-box {
+    flex: 1;
+    display: flex; /* Added to allow positioning */
+    justify-content: flex-start; /* Moves the logo to the left */
+    padding-left: 50px; /* Adds space from the left */
+}
 
-        .logo-box img {
-            height: 120px;
-		left:50px;
-        }
+.logo-box img {
+    height: 150px; /* Increase the size */
+}
+
 
         .centralize {
             flex: 2;
